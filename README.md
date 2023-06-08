@@ -16,8 +16,9 @@ Note you actually can not actually read the books
 ```
 ## Features 
 ```
-- easy to use filter system
-- day and night mode 
--  in-depth preview of books 
+- Easy to use filter system
+- Day and night mode 
+- In-depth preview of books 
+- Smooth drop down button
 ```
  
