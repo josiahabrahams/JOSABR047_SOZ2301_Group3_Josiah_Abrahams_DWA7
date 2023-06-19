@@ -1,20 +1,17 @@
+import {createAuthorOptionts, createGenre} from "./modules/addFormOptions.js"
+import  {closeDetailedBookOverlay, closeToggleNightModeOverlay, closefilterSectionOverlay,openSearchMenufiltersystem, openSettingMenu} from "./modules/openAndCloseModals.js"
+import {toggleSystemsColour} from "./modules/toggleNightMode.js"
 import {
   addMoreBooks,
-  toggleSystemsColour,
   getFilter,
   createInDetailBookPreview,
-  closeDetailedBookOverlay,
-  closefilterSectionOverlay,
-  closeToggleNightModeOverlay,
-  openSearchMenufiltersystem,
-  openSettingMenu,
-} from "./modules/htmlElementFunctions.js";
-import { html, css, documentElement } from "./htmlAndCss.js";
+
+} from "./modules/booksDisplay.js";
+import { html} from "./modules/htmlQeurySelectors.js";
 import {
   firstSetOfBooks,
-  createGenre,
-  createAuthorOptionts,
-} from "./modules/function.js";
+  
+} from "./modules/firstSetOfBooks.js";
 import { books } from "./data.js";
 
 // this section produces the first 36 books to appear on the html

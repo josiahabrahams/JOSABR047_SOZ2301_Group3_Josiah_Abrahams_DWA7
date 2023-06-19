@@ -1,6 +1,6 @@
-import { html, css, documentElement } from "../htmlAndCss.js";
+import { html } from "./htmlQeurySelectors.js";
 import { BOOKS_PER_PAGE, authors, books } from "../data.js";
-import { createPreview } from "../modules/function.js";
+import { createPreview } from "./createPreview.js";
 export const matches = books;
 export let page = 1; // will defines how much books will appear on each page
 //defines the drop downs original amount
@@ -49,21 +49,6 @@ export const addMoreBooks = () => {
   );
 };
 
-/**
- * this will decide the websites colour by using {@link css }-that defines the colour and {@link documentElement}-where the colour is applied
- * @param {*} event-is the actual event object just don't know how to define it
- */
-export const toggleSystemsColour = (event) => {
-  event.preventDefault();
-  const formData = new FormData(event.target);
-  const result = Object.fromEntries(formData);
-  const selectedMode = result.theme === "night" ? "night" : "day";
-
-  documentElement.style.setProperty("--color-dark", css[selectedMode].dark);
-  documentElement.style.setProperty("--color-light", css[selectedMode].light);
-
-  html.toggleNightMode.settingMenu.close();
-};
 
 /**
  * this  function filters through the books then makes them into interactive books
@@ -197,40 +182,4 @@ export const createInDetailBookPreview = (event) => {
   html.detailedPreviewOfbooks.activeDescription.innerText = active.description;
 };
 
-/**
- * closes {@link html.detailedPreviewOfbooks.focusOnBook} form
- */
-export const closeDetailedBookOverlay = () => {
-  // closes in-depth view of a clicked book
-  html.detailedPreviewOfbooks.focusOnBook.close();
-};
 
-//closes overlay function secion
-
-/**
- * closes the a filter section overlay
- */
-export const closefilterSectionOverlay = () => {
-  html.filterSection.searchMenu.close();
-};
-
-/**
- * closes Toggle night mode overlay
- */
-export const closeToggleNightModeOverlay = () => {
-  html.toggleNightMode.settingMenu.close();
-};
-
-//open overlay function secion
-
-/** opens the searchMenu overlay */
-export const openSearchMenufiltersystem = () => {
-  html.filterSection.searchMenu.showModal();
-  html.filterSection.searchTitle.focus();
-};
-
-/* * opens settingMenu overlay*/
-
-export const openSettingMenu = () => {
-  html.toggleNightMode.settingMenu.showModal();
-};

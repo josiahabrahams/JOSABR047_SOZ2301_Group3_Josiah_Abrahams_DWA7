@@ -66,22 +66,5 @@ export const html = {
    },
  };
  
- /**
-  * used to define what the event listenr will apply to
-  */
- export const documentElement = document.body;
- 
- /**
-  * is the data used to define what colors will be applied once the eventlistener runs
-  */
- export const css = {
-   day: {
-     dark: "10, 10, 20",
-     light: "255, 255, 255",
-   },
-   night: {
-     dark: "255, 255, 255",
-     light: "10, 10, 20",
-   },
- };
+
  
