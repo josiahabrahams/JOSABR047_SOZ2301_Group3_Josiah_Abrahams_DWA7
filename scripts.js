@@ -1,9 +1,9 @@
+import {openbookpreview} from "./modules/indetailBookPreview.js"
 import {createAuthorOptionts, createGenre} from "./modules/addFormOptions.js"
-import { html } from "./modules/htmlQeurySelectors.js";
+import { html } from "./modules/helper.js";
 import { firstSetOfBooks,} from "./modules/firstSetOfBooks.js";
 import { books } from "./data.js";
 import  {
-  closeDetailedBookOverlay, 
   closeToggleNightModeOverlay, 
   closefilterSectionOverlay,
   openSearchMenufiltersystem, 
@@ -13,7 +13,6 @@ import {toggleSystemsColour} from "./modules/toggleNightMode.js"
 import {
   addMoreBooks,
   getFilter,
-  createInDetailBookPreview,
 
 } from "./modules/booksDisplay.js";
 
@@ -50,14 +49,12 @@ html.toggleNightMode.settingMenu.addEventListener(
 // this section refers to the in-detail-book preview feature
 html.displaySection.dataListItems.addEventListener(
   "click",
-  createInDetailBookPreview
+  openbookpreview.getSinalBook
 );
 
-// closes over-lay section
-html.detailedPreviewOfbooks.activeCloseButton.addEventListener(
-  "click",
-  closeDetailedBookOverlay
-); /**  closes focusOnBook overlay*/
+// closes detailedPreviewOfbooks over-lay section
+  openbookpreview.closeinDetailbookModal
+/**  closes focusOnBook overlay*/
 html.filterSection.searchCancelButton.addEventListener(
   "click",
   closefilterSectionOverlay
@@ -74,3 +71,4 @@ html.filterSection.searchIcon.addEventListener(
   openSearchMenufiltersystem
 ); // shows search menu
 html.toggleNightMode.settingIcon.addEventListener("click", openSettingMenu); //opens settingMenu
+

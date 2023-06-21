@@ -1,4 +1,4 @@
-import { html } from "./htmlQeurySelectors.js";
+import { html } from "./helper.js";
 import { BOOKS_PER_PAGE, authors, books } from "../data.js";
 import { createPreview } from "./createPreview.js";
 export const matches = books;
@@ -149,37 +149,6 @@ export const getFilter = (event) => {
  * @param {*} event - is the event object
  * @returns
  */
-export const createInDetailBookPreview = (event) => {
-  // will produce an in-depth view of a clicked book
 
-  const pathArray = Array.from(event.path || event.composedPath());
-  let active;
-
-  for (const node of pathArray) {
-    if (event.target.tagName !== "BUTTON") return;
-
-    if (active) break;
-    const previewId =
-      node.children[2].children[0]
-        .innerHTML; /**  hones down on dialoge id from {@link createPreview }*/
-
-    for (const singleBook of books) {
-      if (singleBook.id === previewId) {
-        active = singleBook;
-        break;
-      }
-    }
-  }
-
-  if (!active) return;
-  html.detailedPreviewOfbooks.focusOnBook.showModal();
-  html.detailedPreviewOfbooks.blurImage.src = active.image;
-  html.detailedPreviewOfbooks.image.src = active.image;
-  html.detailedPreviewOfbooks.activeTitle.innerText = active.title;
-  html.detailedPreviewOfbooks.activeSubTitle.innerText = `${
-    authors[active.author]
-  } (${new Date(active.published).getFullYear()})`;
-  html.detailedPreviewOfbooks.activeDescription.innerText = active.description;
-};
 
 

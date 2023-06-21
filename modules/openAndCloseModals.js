@@ -1,13 +1,8 @@
-import { html} from "./htmlQeurySelectors.js"
+import { html} from "./helper.js"
 
 
-/**
- * closes {@link html.detailedPreviewOfbooks.focusOnBook} form
- */
-export const closeDetailedBookOverlay = () => {
-    // closes in-depth view of a clicked book
-    html.detailedPreviewOfbooks.focusOnBook.close();
-  };
+
+
   
   //closes overlay function secion
   

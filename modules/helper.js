@@ -57,7 +57,7 @@ export const html = {
      image: document.querySelector("[data-list-image]"),
      /**is the book's title */
      activeTitle: document.querySelector("[data-list-title]"),
-     /**is the book's subtitle */
+     /**is the book's published date */
      activeSubTitle: document.querySelector("[data-list-subtitle]"),
      /**is the book's description */
      activeDescription: document.querySelector("[data-list-description]"),
@@ -65,6 +65,15 @@ export const html = {
      activeCloseButton: document.querySelector("[data-list-close]"),
    },
  };
+  /**
+   * 
+   * @param {Element | null} element is the alleged html element to be used
+   * @returns {*}
+   */
+export const checkIfnull = (element) =>{
+  if (element === null ) throw new Error(element , `is equal to null`)
+  return  element
+ }
  
 
  
